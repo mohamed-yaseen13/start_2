@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "200078310527",
+    "project_id": "start2-589e0",
+    "storage_bucket": "start2-589e0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:200078310527:android:5eb609335b7277a4da134a",
+        "android_client_info": {
+          "package_name": "com.zeroonez.start2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRQ6IuFY4rin5tq7wDyg5IfGZEQx0Kx_4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
