@@ -106,6 +106,7 @@ flutter:
   assets:
     - assets/images/logo/
     - assets/images/home/
+    - assets/images/splash/
     - assets/icons/
     - assets/lotties/
     - assets/fonts/

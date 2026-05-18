@@ -1,10 +1,11 @@
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:provider/provider.dart';
-import 'package:start2/core/Theme/app_system_ui.dart';
-import 'package:start2/core/constants/constants.dart';
-import 'package:start2/core/widgets/logo_widget.dart';
-import '../../../../core/helper_function/helper_function.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:provider/provider.dart';
+import 'package:start2/core/constants/app_images.dart';
+import '../../../../core/Theme/app_system_ui.dart';
+import '../../../../core/constants/constants.dart';
+import '../../../../core/helper_function/helper_function.dart';
 import '../providers/splash_provider.dart';
 
 class SplashPage extends StatefulWidget {
@@ -37,8 +38,29 @@ class _SplashPageState extends State<SplashPage> {
           color: Colors.white,
           width: 1.sw,
           height: 1.sh,
-          child: Center(
-            child: LogoWidget(width: 0.5.sw, height: 0.2.sh),
+          child: Stack(
+            children: [
+              Positioned(
+                top: 0,
+                left: 0,
+                child: Image.asset(AppImages.splashTop),
+              ),
+              Positioned(
+                top: 279.h,
+                left: 64.w,
+                child: SvgPicture.asset(AppImages.splashCenter),
+              ),
+              Positioned(
+                bottom: 0,
+                left: 0,
+                child: SvgPicture.asset(AppImages.splashBottom),
+              ),
+              Positioned(
+                bottom: 0,
+                right: 5.w,
+                child: Image.asset(AppImages.splashCar),
+              ),
+            ],
           ),
         ),
       ),

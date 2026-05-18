@@ -18,7 +18,7 @@ class MainApp extends StatelessWidget {
     return Consumer<LanguageProvider>(
       builder: (context, lang, _) {
         return ScreenUtilInit(
-          designSize: const Size(375, 825),
+          designSize: const Size(375, 812),
           minTextAdapt: true,
           splitScreenMode: true,
           builder: (context, orientation) {

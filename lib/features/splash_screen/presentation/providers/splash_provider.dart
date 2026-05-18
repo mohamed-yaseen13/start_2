@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:start2/core/helper_function/prefs.dart';
-import 'package:start2/features/onboarding/presentation/providers/onboarding_provider.dart';
 import '../../../../core/constants/constants.dart';
 import '../../../../core/helper_function/helper_function.dart';
+import '../../../../core/helper_function/prefs.dart';
+import '../../../auth/presentation/providers/login_provider.dart';
 
 class SplashProvider extends ChangeNotifier {
   void startApp() async {
@@ -32,12 +32,12 @@ class SplashProvider extends ChangeNotifier {
     // }
     if (getIsFirstTime()) {
       // First time - go to onboarding
-      Provider.of<OnboardingProvider>(
+      Provider.of<LoginProvider>(
         Constants.globalContext(),
         listen: false,
       ).goTo();
     } else {
-      Provider.of<OnboardingProvider>(
+      Provider.of<LoginProvider>(
         Constants.globalContext(),
         listen: false,
       ).goTo();
