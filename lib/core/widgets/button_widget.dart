@@ -46,10 +46,9 @@ class ButtonWidget extends StatelessWidget {
     return Material(
       elevation: withShadow ? (elevation ?? 2) : 0,
       borderRadius:
-      directionBorderRadius ?? BorderRadius.circular(borderRadius ?? 8),
+          directionBorderRadius ?? BorderRadius.circular(borderRadius ?? 10.r),
       color: color ?? colors.primary,
       child: InkWell(
-
         onTap: onTap,
         child: Container(
           width: takeSmallestWidth ? null : (width ?? .9.sw),
@@ -57,7 +56,8 @@ class ButtonWidget extends StatelessWidget {
           padding: padding ?? EdgeInsets.symmetric(horizontal: .02.sw),
           decoration: BoxDecoration(
             borderRadius:
-            directionBorderRadius ?? BorderRadius.circular(borderRadius ?? 8),
+                directionBorderRadius ??
+                BorderRadius.circular(borderRadius ?? 10.r),
             color: color ?? colors.primary,
             border: borderColor != null && color != null
                 ? Border.all(color: borderColor!)
@@ -71,7 +71,8 @@ class ButtonWidget extends StatelessWidget {
               if (!widgetAfterText) widget ?? const SizedBox(),
               Text(
                 LanguageProvider.translate("buttons", text),
-                style: textStyle ??
+                style:
+                    textStyle ??
                     textTheme.bodyMedium?.copyWith(
                       color: colors.onPrimary,
                       fontSize: 16.sp,

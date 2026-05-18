@@ -19,7 +19,7 @@ class AppTheme {
     useMaterial3: true,
     brightness: Brightness.light,
 
-    fontFamily: "DIN",
+    fontFamily: "Cairo",
 
     colorScheme: ColorScheme.light(
       primary: AppColor.primaryColor,
@@ -63,7 +63,7 @@ class AppTheme {
     useMaterial3: true,
     brightness: Brightness.dark,
 
-    fontFamily: "DIN",
+    fontFamily: "Cairo",
 
     colorScheme: const ColorScheme.dark().copyWith(
       primary: AppColor.primaryColor,

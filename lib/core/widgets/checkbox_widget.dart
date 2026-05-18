@@ -23,17 +23,14 @@ class CheckBoxWidget extends StatelessWidget {
 
     return InkWell(
       onTap: () => onChange(!check),
-      borderRadius: BorderRadius.circular(8),
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 2.w),
-        padding: padding ?? EdgeInsets.all(0.5.w),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(10.r),
           border: Border.all(
             color: check
                 ? colors.primary
                 : colors.onSurface.withValues(alpha: 0.3),
-            width: 2,
+            width: 1.5.w,
           ),
         ),
         child: Container(
@@ -41,10 +38,10 @@ class CheckBoxWidget extends StatelessWidget {
           height: height ?? 24.w,
           decoration: BoxDecoration(
             color: check ? colors.primary : Colors.white,
-            borderRadius: BorderRadius.circular(6),
+            borderRadius: BorderRadius.circular(check ? 6.r : 10.r),
           ),
           child: check
-              ? Icon(Icons.done, size: 16.sp, color: colors.onPrimary)
+              ? Icon(Icons.done, size: 24.sp, color: colors.onPrimary)
               : null,
         ),
       ),

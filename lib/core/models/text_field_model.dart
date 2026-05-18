@@ -5,7 +5,7 @@ class TextFieldModel {
   final String key;
   TextInputType? textInputType;
   TextEditingController controller;
-  bool next, obscureText, readOnly;
+  bool next, obscureText, readOnly, autoFocus;
   bool? isLabel;
   String? Function(String?)? validator;
   Widget? suffix, prefix, title;
@@ -20,6 +20,7 @@ class TextFieldModel {
     this.image,
     required this.key,
     this.label,
+    this.autoFocus = false,
     this.isLabel,
     this.onChange,
     this.hint = "",

@@ -40,7 +40,7 @@ class ListTextFieldWidget extends StatelessWidget {
       child: Wrap(
         alignment: WrapAlignment.spaceBetween,
         children: List.generate(inputs.length, (index) {
-          final input = inputs[index];
+          final TextFieldModel input = inputs[index];
           final finalTextColor = textColor ?? colors.onSurface;
 
           return TextFieldWidget(
@@ -109,6 +109,7 @@ class ListTextFieldWidget extends StatelessWidget {
             readOnly: input.readOnly,
             width: input.width,
             contentPadding: input.contentPadding,
+            autoFocus: input.autoFocus,
           );
         }),
       ),

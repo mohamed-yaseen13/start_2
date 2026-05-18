@@ -107,7 +107,8 @@ flutter:
     - assets/images/logo/
     - assets/images/home/
     - assets/images/splash/
-    - assets/icons/
+    - assets/icons/auth/
+    - assets/icons/home/
     - assets/lotties/
     - assets/fonts/
     - assets/languages/
@@ -125,9 +126,9 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: DIN
+    - family: Cairo
       fonts:
-        - asset: assets/fonts/DINNextLTArabic-Regular.ttf
+        - asset: assets/fonts/Cairo-VariableFont_slnt,wght.ttf
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf
