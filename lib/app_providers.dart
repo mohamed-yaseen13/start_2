@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:start2/features/auth/presentation/providers/complete_data_provider.dart';
 import 'package:start2/features/auth/presentation/providers/otp_provider.dart';
 import 'core/Theme/theme_provider.dart';
 import 'core/models/progress_provider.dart';
@@ -21,6 +22,7 @@ class AppProviders extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => LoginProvider()),
         ChangeNotifierProvider(create: (_) => ProgressProvider()),
         ChangeNotifierProvider(create: (_) => OtpProvider()),
+        ChangeNotifierProvider(create: (_) => CompleteDataProvider()),
       ],
       child: child,
     );

@@ -7,7 +7,6 @@ import 'package:start2/core/constants/app_images.dart';
 import 'package:start2/core/widgets/button_widget.dart';
 import 'package:start2/features/auth/presentation/providers/login_operations.dart';
 import 'package:start2/features/auth/presentation/providers/login_provider.dart';
-import 'package:start2/features/language/presentation/provider/language_provider.dart';
 
 class LoginBottomNavigationBarWidget extends StatelessWidget {
   const LoginBottomNavigationBarWidget({super.key});
@@ -40,7 +39,7 @@ class LoginBottomNavigationBarWidget extends StatelessWidget {
                       onTap: () {
                         loginProvider.submit();
                       },
-                      text: LanguageProvider.translate('auth', 'confirm'),
+                      text: 'confirm',
                       textStyle: text!.copyWith(color: Colors.white),
                       color: isReady ? null : Color(0xFFAAAAAA),
                     );
@@ -49,7 +48,7 @@ class LoginBottomNavigationBarWidget extends StatelessWidget {
                 SizedBox(height: 24.h),
                 ButtonWidget(
                   onTap: () {},
-                  text: LanguageProvider.translate('auth', 'guest'),
+                  text: 'guest',
                   color: Colors.transparent,
                   borderColor: color,
                   textStyle: text!.copyWith(color: color),
