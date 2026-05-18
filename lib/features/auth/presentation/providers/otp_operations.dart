@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:start2/core/constants/constants.dart';
 import 'package:start2/core/helper_function/helper_function.dart';
 import 'package:start2/core/helper_function/loading.dart';
-import 'package:start2/features/auth/presentation/providers/complete_data_provider.dart';
+import 'package:start2/features/auth/presentation/providers/profile_provider.dart';
 import 'package:start2/features/auth/presentation/providers/otp_provider.dart';
 
 extension OtpOperations on OtpProvider {
@@ -55,7 +55,7 @@ extension OtpOperations on OtpProvider {
     // final result = await authUseCase.checkCode(data);
     await delay(300);
     navPopLoading();
-    Constants.globalContext().read<CompleteDataProvider>().goTo();
+    Constants.globalContext().read<ProfileProvider>().goTo();
     // result.fold((l) => showToast(l.message!), (r) {
     //   final profile = Provider.of<ProfileProvider>(
     //     Constants.globalContext(),

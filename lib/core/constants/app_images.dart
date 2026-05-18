@@ -12,4 +12,7 @@ class AppImages {
 
   // Auth
   static const String verticalLine = 'assets/icons/auth/vertical_line_icon.svg';
+
+  static const String userImagePlaceHolder =
+      'assets/images/auth/user_image_place_holder.png';
 }

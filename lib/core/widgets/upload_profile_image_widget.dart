@@ -1,10 +1,11 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-// import 'package:image_picker/image_picker.dart';
-// import 'package:provider/provider.dart';
+import 'package:provider/provider.dart';
+import 'package:start2/core/constants/app_images.dart';
+import 'package:start2/features/auth/presentation/providers/profile_provider.dart';
 import '../Theme/app_theme.dart';
 import '../../features/language/presentation/provider/language_provider.dart';
-// import '../helper_function/image.dart';
 
 class UploadProfileImageWidget extends StatelessWidget {
   const UploadProfileImageWidget({super.key});
@@ -12,13 +13,12 @@ class UploadProfileImageWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = context.theme;
-    // final profileProvider = Provider.of<ProfileProvider>(context);
+    final profileProvider = context.watch<ProfileProvider>();
 
     return InkWell(
       onTap: () async {
         FocusScope.of(context).unfocus();
         // final XFile? image = await chooseMedia<XFile>();
-        // Handle image if needed
       },
       child: Column(
         children: [
@@ -32,10 +32,12 @@ class UploadProfileImageWidget extends StatelessWidget {
                   height: .30.sw,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    // image: DecorationImage(
-                    // fit: BoxFit.cover,
-                    // image: profileProvider.showUserImage(),
-                    // ),
+                    image: DecorationImage(
+                      fit: BoxFit.cover,
+                      image: profileProvider.image == null
+                          ? AssetImage(AppImages.userImagePlaceHolder)
+                          : FileImage(File(profileProvider.image!.path)),
+                    ),
                   ),
                 ),
               ],
@@ -44,9 +46,7 @@ class UploadProfileImageWidget extends StatelessWidget {
           SizedBox(height: 1.h),
           Text(
             LanguageProvider.translate('auth', 'upload_image'),
-            style: theme.textTheme.bodyMedium?.copyWith(
-              fontWeight: FontWeight.w500,
-            ),
+            style: theme.textTheme.bodyMedium,
           ),
         ],
       ),
