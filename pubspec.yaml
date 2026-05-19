@@ -111,6 +111,7 @@ flutter:
 
     - assets/icons/auth/
     - assets/icons/home/
+    - assets/icons/nav/
 
     - assets/lotties/
 
