@@ -31,7 +31,7 @@ class OtpPage extends StatelessWidget {
       bottomNavigationBar: CustomBottomNavBarWidget(
         child: ButtonWidget(
           onTap: () {
-            otpProvider.checkCode();
+            otpProvider.submitOtpForm();
           },
           text: 'send',
         ),

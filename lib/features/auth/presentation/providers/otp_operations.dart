@@ -1,9 +1,11 @@
 import 'dart:async';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:start2/core/constants/constants.dart';
-import 'package:start2/core/helper_function/helper_function.dart';
+import 'package:start2/core/dialog/snack_bar.dart';
 import 'package:start2/core/helper_function/loading.dart';
+import 'package:start2/features/auth/presentation/providers/profile_operations.dart';
 import 'package:start2/features/auth/presentation/providers/profile_provider.dart';
 import 'package:start2/features/auth/presentation/providers/otp_provider.dart';
 
@@ -45,35 +47,40 @@ extension OtpOperations on OtpProvider {
   }
 
   Future<void> checkCode() async {
-    // Map<String, dynamic> data = {};
-    // data["token"] = await FirebaseMessaging.instance.getToken() ?? "123";
-    // data["phone"] = otpNumber;
-    // data["hashed_code"] = theHashCode;
-    // data["code"] = otpController.text.trim();
-
+    Map<String, dynamic> data = {};
+    data["code"] = otpController.text.trim();
+    data["hashed_code"] = hashedCode;
+    data['login'] = 1;
+    data["token"] = await FirebaseMessaging.instance.getToken() ?? "123";
+    data["phone"] = phone;
     loading();
-    // final result = await authUseCase.checkCode(data);
-    await delay(300);
+    final response = await authRemoteDataSource.checkCode(data);
     navPopLoading();
-    Constants.globalContext().read<ProfileProvider>().goTo();
-    // result.fold((l) => showToast(l.message!), (r) {
-    //   final profile = Provider.of<ProfileProvider>(
-    //     Constants.globalContext(),
-    //     listen: false,
-    //   );
-    //   profile.successLogin(userEntity: r);
-    // });
+    response.fold(
+      (l) {
+        showToast(l.message!);
+      },
+      (r) {
+        Constants.globalContext().read<ProfileProvider>().successLogin(
+          userEntity: r,
+        );
+      },
+    );
   }
 
-  void sendCode() async {
-    // Map<String, dynamic> data = {};
-    // data['phone'] = phone;
-    //loading();
-    // data => phone
-    // loading
-    // call API
-    // navPOP
-    // showToast
-    // hashedCode = r;
+  Future<void> sendOtpCode() async {
+    Map<String, dynamic> data = {};
+    data['phone'] = phone;
+    loading();
+    var response = await authRemoteDataSource.sendOtpCode(data);
+    navPopLoading();
+    response.fold(
+      (l) {
+        showToast(l.message ?? "");
+      },
+      (r) {
+        hashedCode = r;
+      },
+    );
   }
 }

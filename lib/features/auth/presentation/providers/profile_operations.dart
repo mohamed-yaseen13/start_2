@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:start2/core/constants/constants.dart';
 import 'package:start2/core/dialog/snack_bar.dart';
-import 'package:start2/core/helper_function/helper_function.dart';
-import 'package:start2/core/helper_function/loading.dart';
+import 'package:start2/core/helper_function/api.dart';
+import 'package:start2/core/helper_function/prefs.dart';
 import 'package:start2/core/helper_function/text_form_field_validation.dart';
 import 'package:start2/core/models/text_field_model.dart';
+import 'package:start2/features/auth/domain/entities/user_entity.dart';
 import 'package:start2/features/auth/presentation/providers/profile_provider.dart';
 import 'package:start2/features/nav/presentation/providers/nav_bar_provider.dart';
 
@@ -46,7 +47,7 @@ extension ProfileOperations on ProfileProvider {
       }
     }
     if (nameError.isEmpty) {
-      successLogin();
+      // successLogin(); TODO callapi update profile
     } else {
       showToast(nameError.trim());
     }
@@ -64,21 +65,16 @@ extension ProfileOperations on ProfileProvider {
   //   rebuild();
   // }
 
-  void successLogin(
-    // {required UserEntity userEntity}
-  ) async {
+  void successLogin({required UserEntity userEntity}) async {
     // this.userEntity = userEntity;
-    // if (userEntity.token != null) {
-    //   ApiHandel.getInstance.updateHeader(userEntity.token!);
-    //   sharedPreferences.setString('token', userEntity.token!);
-    // }
-    loading();
-    await delay(300);
-    navPopLoading();
-    Constants.globalContext().read<NavBarProvider>().goTo();
-    // Provider.of<NavigationBarProvider>(
-    //   Constants.globalContext(),
-    //   listen: false,
-    // ).goToPage();
+    if (userEntity.token != null) {
+      ApiHandel.getInstance.updateHeader(userEntity.token!);
+      sharedPreferences.setString('token', userEntity.token!);
+    }
+    if (userEntity.email == null) {
+      goTo();
+    } else {
+      Constants.globalContext().read<NavBarProvider>().goTo();
+    }
   }
 }

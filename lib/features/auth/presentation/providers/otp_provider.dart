@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:start2/core/helper_function/navigation.dart';
+import 'package:start2/features/auth/data/datasource/auth_remote_data_source.dart';
 import 'package:start2/features/auth/presentation/pages/otp_page.dart';
 import 'package:start2/features/auth/presentation/providers/otp_operations.dart';
 
@@ -12,6 +13,9 @@ class OtpProvider extends ChangeNotifier {
   final formKey = GlobalKey<FormState>();
   TextEditingController otpController = TextEditingController();
 
+  final AuthRemoteDataSource authRemoteDataSource;
+  OtpProvider(this.authRemoteDataSource);
+
   late String phone;
   String? hashedCode;
 
@@ -19,10 +23,10 @@ class OtpProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void goTo(String phone) {
+  void goTo(String phone) async {
     reset();
     setPhone(phone);
-    sendCode();
+    await sendOtpCode();
     navP(OtpPage());
     startTimer();
   }

@@ -14,7 +14,6 @@ class LoginProvider extends ChangeNotifier {
   }
 
   void goTo() {
-    reset();
     initInputs();
     navPARU(LoginPage());
   }

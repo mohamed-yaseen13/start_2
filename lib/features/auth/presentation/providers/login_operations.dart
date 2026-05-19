@@ -6,8 +6,6 @@ import 'package:start2/core/Theme/app_theme.dart';
 import 'package:start2/core/constants/app_images.dart';
 import 'package:start2/core/constants/constants.dart';
 import 'package:start2/core/dialog/snack_bar.dart';
-import 'package:start2/core/helper_function/helper_function.dart';
-import 'package:start2/core/helper_function/loading.dart';
 import 'package:start2/core/helper_function/text_form_field_validation.dart';
 import 'package:start2/core/models/text_field_model.dart';
 import 'package:start2/features/auth/presentation/providers/login_provider.dart';
@@ -49,11 +47,6 @@ extension LoginOperations on LoginProvider {
     ];
   }
 
-  void reset() {
-    isAcceptTerms = false;
-    loginInputs = [];
-  }
-
   void submit() {
     String nameError = '';
     for (var element in loginInputs) {
@@ -69,32 +62,11 @@ extension LoginOperations on LoginProvider {
       nameError += '\n';
     }
     if (nameError.isEmpty) {
-      login();
+      Constants.globalContext().read<OtpProvider>().goTo(
+        loginInputs.firstWhere((e) => e.key == 'phone').controller.text,
+      );
     } else {
       showToast(nameError.trim());
     }
-  }
-
-  void login() async {
-    // String token = await FirebaseMessaging.instance.getToken() ?? "123";
-    // Map<String, dynamic> data = {};
-    // for (var element in loginInputs) {
-    // data[element.key] = element.controller.text;
-    // }
-    // data['token'] = token;
-    // data['remember_me'] = isRememberMe; // i added this [ mohamed yaseen ]
-    loading();
-    await delay(3000); // i added this [ mohamed yaseen ] just for test
-    // Either<DioException, UserEntity> login = await UserUseCases(sl()).login(data);
-    navPopLoading();
-    Constants.globalContext().read<OtpProvider>().goTo(
-      loginInputs.firstWhere((e) => e.key == 'phone').controller.text,
-    );
-    // login.fold((l) {
-    //   showToast(l.message!);
-    // }, (r) async {
-    //   final provider = Provider.of<ProfileProvider>(Constants.globalContext(),listen: false);
-    //   provider.successLogin(userEntity: r);
-    // });
   }
 }

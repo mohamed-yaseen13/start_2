@@ -1,28 +1,39 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:start2/core/Theme/app_theme.dart';
+import 'package:start2/core/helper_function/convert.dart';
+import 'package:start2/features/auth/presentation/providers/otp_operations.dart';
+import 'package:start2/features/auth/presentation/providers/otp_provider.dart';
 import 'package:start2/features/language/presentation/provider/language_provider.dart';
 
 class TimerWidget extends StatelessWidget {
-  final String counter;
-
-  const TimerWidget({super.key, required this.counter});
+  const TimerWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final otpProvider = context.watch<OtpProvider>();
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         GestureDetector(
-          onTap: () {},
+          onTap: () {
+            if (otpProvider.counter == 0) {
+              otpProvider.sendOtpCode();
+              otpProvider.startTimer();
+            }
+          },
           child: Text(
             LanguageProvider.translate('auth', 'resend_otp'),
             style: context.text.bodyMedium!.copyWith(
-              color: context.colors.primary,
+              color: otpProvider.counter == 0
+                  ? context.colors.primary
+                  : context.colors.secondary,
             ),
           ),
         ),
         Text(
-          counter,
+          convertSecToMin(otpProvider.counter),
           style: context.text.bodyMedium!.copyWith(
             color: context.colors.tertiary,
           ),

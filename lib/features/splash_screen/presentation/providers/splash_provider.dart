@@ -12,7 +12,7 @@ class SplashProvider extends ChangeNotifier {
       // Provider.of<CategoriesProvider>(Constants.globalContext(), listen: false).refresh(),
       // Provider.of<CityProvider>(Constants.globalContext(), listen: false).getCities(),
     ]);
-    await delay(1000);
+    await delay(3000);
     // isEndAnimation= true;
     // var settingsProvider = Provider.of<SettingsProvider>(Constants.globalContext(),listen: false);
     // SettingsEntity? settings = settingsProvider.settingsEntity;
