@@ -26,4 +26,22 @@ class AuthRemoteDataSource {
       return Right(UserModel.fromJson(r.data['data']));
     });
   }
+
+  Future<Either<DioException, UserModel>> updateProfile(
+    Map<String, dynamic> data,
+  ) async {
+    var response = await apiHandel.post('user/update_profile', data);
+    log(response.toString());
+    return response.fold((l) => Left(l), (r) {
+      return Right(UserModel.fromJson(r.data['data']));
+    });
+  }
+
+  Future<Either<DioException, UserModel>> getProfile() async {
+    var response = await apiHandel.get('user/get_profile');
+    log(response.toString());
+    return response.fold((l) => Left(l), (r) {
+      return Right(UserModel.fromJson(r.data['data']));
+    });
+  }
 }

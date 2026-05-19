@@ -5,9 +5,9 @@ import 'package:provider/provider.dart';
 import 'package:start2/core/constants/constants.dart';
 import 'package:start2/core/dialog/snack_bar.dart';
 import 'package:start2/core/helper_function/loading.dart';
-import 'package:start2/features/auth/presentation/providers/profile_operations.dart';
-import 'package:start2/features/auth/presentation/providers/profile_provider.dart';
-import 'package:start2/features/auth/presentation/providers/otp_provider.dart';
+import 'package:start2/features/auth/presentation/providers/profile/profile_operations.dart';
+import 'package:start2/features/auth/presentation/providers/profile/profile_provider.dart';
+import 'package:start2/features/auth/presentation/providers/otp/otp_provider.dart';
 
 extension OtpOperations on OtpProvider {
   void startTimer() {
@@ -31,7 +31,7 @@ extension OtpOperations on OtpProvider {
 
   void reset() {
     counter = 60;
-    otpController = TextEditingController();
+    otpController.clear();
   }
 
   void setPhone(String phone) {
@@ -40,9 +40,7 @@ extension OtpOperations on OtpProvider {
 
   void submitOtpForm() {
     if (formKey.currentState!.validate()) {
-      if (otpController.text.length == 4) {
-        checkCode();
-      }
+      checkCode();
     }
   }
 
@@ -54,7 +52,7 @@ extension OtpOperations on OtpProvider {
     data["token"] = await FirebaseMessaging.instance.getToken() ?? "123";
     data["phone"] = phone;
     loading();
-    final response = await authRemoteDataSource.checkCode(data);
+    final response = await authUseCases.checkCode(data);
     navPopLoading();
     response.fold(
       (l) {
@@ -68,12 +66,10 @@ extension OtpOperations on OtpProvider {
     );
   }
 
-  Future<void> sendOtpCode() async {
+  void sendOtpCode() async {
     Map<String, dynamic> data = {};
     data['phone'] = phone;
-    loading();
-    var response = await authRemoteDataSource.sendOtpCode(data);
-    navPopLoading();
+    var response = await authUseCases.sendOtpCode(data);
     response.fold(
       (l) {
         showToast(l.message ?? "");
@@ -82,5 +78,13 @@ extension OtpOperations on OtpProvider {
         hashedCode = r;
       },
     );
+  }
+
+  void resend() {
+    if (counter == 0) {
+      sendOtpCode();
+      startTimer();
+      otpController.clear();
+    }
   }
 }

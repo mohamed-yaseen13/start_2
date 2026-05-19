@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
-import 'package:start2/core/constants/app_images.dart';
 import 'package:start2/core/widgets/button_widget.dart';
 import 'package:start2/core/widgets/custom_bottom_nav_bar_widget.dart';
-import 'package:start2/features/auth/presentation/providers/profile_operations.dart';
-import 'package:start2/features/auth/presentation/providers/profile_provider.dart';
+import 'package:start2/core/widgets/upload_profile_image_widget.dart';
+import 'package:start2/features/auth/presentation/providers/profile/profile_operations.dart';
+import 'package:start2/features/auth/presentation/providers/profile/profile_provider.dart';
 import 'package:start2/features/auth/presentation/widgets/auth_header_widget.dart';
 import 'package:start2/features/auth/presentation/widgets/profile/profile_form.dart';
 
@@ -27,7 +27,7 @@ class ProfilePage extends StatelessWidget {
               SizedBox(height: 24.h),
               AuthHeaderWidget(title: 'complete', desc: 'complete_data'),
               SizedBox(height: 24.h),
-              Center(child: Image.asset(AppImages.userImagePlaceHolder)),
+              Center(child: UploadProfileImageWidget()),
               SizedBox(height: 24.h),
               ProfileForm(),
             ],

@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:start2/core/widgets/button_widget.dart';
 import 'package:start2/core/widgets/custom_bottom_nav_bar_widget.dart';
-import 'package:start2/features/auth/presentation/providers/otp_operations.dart';
-import 'package:start2/features/auth/presentation/providers/otp_provider.dart';
+import 'package:start2/features/auth/presentation/providers/otp/otp_operations.dart';
+import 'package:start2/features/auth/presentation/providers/otp/otp_provider.dart';
 import 'package:start2/features/auth/presentation/widgets/auth_header_widget.dart';
 import 'package:start2/features/auth/presentation/widgets/otp/otp_form_widget.dart';
 

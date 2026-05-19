@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:start2/features/auth/presentation/providers/profile/profile_operations.dart';
+import 'package:start2/features/auth/presentation/providers/profile/profile_provider.dart';
+import 'package:start2/features/nav/presentation/providers/nav_bar_provider.dart';
 import '../../../../core/constants/constants.dart';
 import '../../../../core/helper_function/helper_function.dart';
 import '../../../../core/helper_function/prefs.dart';
-import '../../../auth/presentation/providers/login_provider.dart';
+import '../../../auth/presentation/providers/login/login_provider.dart';
 
 class SplashProvider extends ChangeNotifier {
   void startApp() async {
@@ -24,58 +27,16 @@ class SplashProvider extends ChangeNotifier {
     //   }
     // }
 
-    // String? login = sharedPreferences.getString('token');
-    // if(login !=null){
+    String? login = sharedPreferences.getString('token');
+    if (login != null) {
+      Constants.globalContext().read<ProfileProvider>().getProfile();
+      Constants.globalContext().read<NavBarProvider>().goTo();
+    } else {
+      Constants.globalContext().read<LoginProvider>().goTo();
+    }
     //     Provider.of<AuthProvider>(Constants.globalContext(),listen: false).getProfile(fromSplash: true);
     // }else{
     //   Provider.of<AuthProvider>(Constants.globalContext(), listen: false).goToLoginPage();
     // }
-    if (getIsFirstTime()) {
-      // First time - go to onboarding
-      Provider.of<LoginProvider>(
-        Constants.globalContext(),
-        listen: false,
-      ).goTo();
-    } else {
-      Provider.of<LoginProvider>(
-        Constants.globalContext(),
-        listen: false,
-      ).goTo();
-      // Not first time - check for auth token
-      // String? token = sharedPreferences.getString('token');
-      // if (token != null) {
-      //   // User is logged in - go to main layout
-      //   Provider.of<NavigationBarProvider>(
-      //     Constants.globalContext(),
-      //     listen: false,
-      //   ).goToPage();
-      // } else {
-      //   // User not logged in - go to login
-      //   Provider.of<NavigationBarProvider>(
-      //     Constants.globalContext(),
-      //     listen: false,
-      //   ).goToPage();
-      //   Provider.of<AdsProvider>(
-      //     Constants.globalContext(),
-      //     listen: false,
-      //   ).getData();
-      //   Provider.of<CategoriesProvider>(
-      //     Constants.globalContext(),
-      //     listen: false,
-      //   ).getData();
-      //   Provider.of<SubCategoryHomeProvider>(
-      //     Constants.globalContext(),
-      //     listen: false,
-      //   ).getData();
-      //   Provider.of<ChatsProvider>(
-      //     Constants.globalContext(),
-      //     listen: false,
-      //   ).getChats();
-    }
-  }
-
-  void clear() {
-    // introEntity = null;
-    notifyListeners();
   }
 }

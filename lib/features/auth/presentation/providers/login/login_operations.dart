@@ -8,8 +8,8 @@ import 'package:start2/core/constants/constants.dart';
 import 'package:start2/core/dialog/snack_bar.dart';
 import 'package:start2/core/helper_function/text_form_field_validation.dart';
 import 'package:start2/core/models/text_field_model.dart';
-import 'package:start2/features/auth/presentation/providers/login_provider.dart';
-import 'package:start2/features/auth/presentation/providers/otp_provider.dart';
+import 'package:start2/features/auth/presentation/providers/login/login_provider.dart';
+import 'package:start2/features/auth/presentation/providers/otp/otp_provider.dart';
 import 'package:start2/features/language/presentation/provider/language_provider.dart';
 
 extension LoginOperations on LoginProvider {

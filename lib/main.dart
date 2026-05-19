@@ -17,9 +17,6 @@ import 'main_app.dart';
 
 @pragma('vm:entry-point')
 Future<void> firebaseMessagingBackgroundHandler(RemoteMessage event) async {
-  // Initialize Firebase for the background isolate
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-
   if (event.notification != null) {
     appNotifications(
       event.notification!,

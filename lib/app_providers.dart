@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:start2/features/auth/presentation/providers/profile_provider.dart';
-import 'package:start2/features/auth/presentation/providers/otp_provider.dart';
+import 'package:start2/features/auth/presentation/providers/profile/profile_provider.dart';
+import 'package:start2/features/auth/presentation/providers/otp/otp_provider.dart';
 import 'package:start2/features/nav/presentation/providers/nav_bar_provider.dart';
 import 'package:start2/injection_container.dart';
 import 'core/Theme/theme_provider.dart';
 import 'core/models/progress_provider.dart';
-import 'features/auth/presentation/providers/login_provider.dart';
+import 'features/auth/presentation/providers/login/login_provider.dart';
 import 'features/language/presentation/provider/language_provider.dart';
 import 'features/splash_screen/presentation/providers/splash_provider.dart';
 
@@ -24,7 +24,7 @@ class AppProviders extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => LoginProvider()),
         ChangeNotifierProvider(create: (_) => ProgressProvider()),
         ChangeNotifierProvider(create: (_) => OtpProvider(sl.get())),
-        ChangeNotifierProvider(create: (_) => ProfileProvider()),
+        ChangeNotifierProvider(create: (_) => ProfileProvider(sl.get())),
         ChangeNotifierProvider(create: (_) => NavBarProvider()),
       ],
       child: child,

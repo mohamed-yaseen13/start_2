@@ -4,8 +4,8 @@ import 'package:provider/provider.dart';
 import 'package:start2/core/Theme/app_theme.dart';
 import 'package:start2/core/widgets/checkbox_widget.dart';
 import 'package:start2/core/widgets/list_text_field_widget.dart';
-import 'package:start2/features/auth/presentation/providers/login_operations.dart';
-import 'package:start2/features/auth/presentation/providers/login_provider.dart';
+import 'package:start2/features/auth/presentation/providers/login/login_operations.dart';
+import 'package:start2/features/auth/presentation/providers/login/login_provider.dart';
 import 'package:start2/features/language/presentation/provider/language_provider.dart';
 
 class LoginForm extends StatelessWidget {

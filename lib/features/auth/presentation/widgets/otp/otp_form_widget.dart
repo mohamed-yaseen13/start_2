@@ -4,7 +4,7 @@ import 'package:pinput/pinput.dart';
 import 'package:provider/provider.dart';
 import 'package:start2/core/Theme/app_theme.dart';
 import 'package:start2/core/widgets/validation_widget.dart';
-import 'package:start2/features/auth/presentation/providers/otp_provider.dart';
+import 'package:start2/features/auth/presentation/providers/otp/otp_provider.dart';
 import 'package:start2/features/auth/presentation/widgets/otp/timer_widget.dart';
 
 class OtpFormWidget extends StatelessWidget {

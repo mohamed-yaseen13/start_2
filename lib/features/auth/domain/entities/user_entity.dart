@@ -14,7 +14,6 @@ class UserEntity {
   String? address;
   String? marketImage;
   String? marketCover;
-  // TODO: market category class
   int lastReadNotification;
   String? token;
   int unReadCount;

@@ -1,10 +1,9 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:start2/core/helper_function/navigation.dart';
-import 'package:start2/features/auth/data/datasource/auth_remote_data_source.dart';
+import 'package:start2/features/auth/domain/usecases/auth_use_cases.dart';
 import 'package:start2/features/auth/presentation/pages/otp_page.dart';
-import 'package:start2/features/auth/presentation/providers/otp_operations.dart';
+import 'package:start2/features/auth/presentation/providers/otp/otp_operations.dart';
 
 class OtpProvider extends ChangeNotifier {
   Timer? timer;
@@ -13,8 +12,8 @@ class OtpProvider extends ChangeNotifier {
   final formKey = GlobalKey<FormState>();
   TextEditingController otpController = TextEditingController();
 
-  final AuthRemoteDataSource authRemoteDataSource;
-  OtpProvider(this.authRemoteDataSource);
+  final AuthUseCases authUseCases;
+  OtpProvider(this.authUseCases);
 
   late String phone;
   String? hashedCode;
@@ -23,10 +22,10 @@ class OtpProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void goTo(String phone) async {
+  void goTo(String phone) {
     reset();
     setPhone(phone);
-    await sendOtpCode();
+    sendOtpCode();
     navP(OtpPage());
     startTimer();
   }

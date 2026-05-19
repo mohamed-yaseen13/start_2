@@ -1,9 +1,8 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
-import 'package:start2/core/constants/app_images.dart';
-import 'package:start2/features/auth/presentation/providers/profile_provider.dart';
+import 'package:start2/features/auth/presentation/providers/profile/profile_operations.dart';
+import 'package:start2/features/auth/presentation/providers/profile/profile_provider.dart';
 import '../Theme/app_theme.dart';
 import '../../features/language/presentation/provider/language_provider.dart';
 
@@ -18,7 +17,7 @@ class UploadProfileImageWidget extends StatelessWidget {
     return InkWell(
       onTap: () async {
         FocusScope.of(context).unfocus();
-        // final XFile? image = await chooseMedia<XFile>();
+        profileProvider.pickProfileImage();
       },
       child: Column(
         children: [
@@ -34,9 +33,7 @@ class UploadProfileImageWidget extends StatelessWidget {
                     shape: BoxShape.circle,
                     image: DecorationImage(
                       fit: BoxFit.cover,
-                      image: profileProvider.image == null
-                          ? AssetImage(AppImages.userImagePlaceHolder)
-                          : FileImage(File(profileProvider.image!.path)),
+                      image: profileProvider.showUserImage(),
                     ),
                   ),
                 ),

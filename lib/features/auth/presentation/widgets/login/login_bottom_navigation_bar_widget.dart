@@ -5,8 +5,8 @@ import 'package:provider/provider.dart';
 import 'package:start2/core/Theme/app_theme.dart';
 import 'package:start2/core/constants/app_images.dart';
 import 'package:start2/core/widgets/button_widget.dart';
-import 'package:start2/features/auth/presentation/providers/login_operations.dart';
-import 'package:start2/features/auth/presentation/providers/login_provider.dart';
+import 'package:start2/features/auth/presentation/providers/login/login_operations.dart';
+import 'package:start2/features/auth/presentation/providers/login/login_provider.dart';
 
 class LoginBottomNavigationBarWidget extends StatelessWidget {
   const LoginBottomNavigationBarWidget({super.key});
