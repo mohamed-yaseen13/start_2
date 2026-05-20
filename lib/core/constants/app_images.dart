@@ -46,4 +46,13 @@ class AppImages {
   static const String office2 = 'assets/images/home/office_2.png';
   static const String office3 = 'assets/images/home/office_3.png';
   static const String office4 = 'assets/images/home/office_4.png';
+
+  static const String car1 = 'assets/images/home/car_1.png';
+  static const String car2 = 'assets/images/home/car_2.png';
+
+  static const String shareIcon = 'assets/icons/home/share_icon.svg';
+  static const String heartIcon = 'assets/icons/home/heart_icon.svg';
+  static const String locationIcon = 'assets/icons/home/location_icon.svg';
+  static const String timerIcon = 'assets/icons/home/timer_icon.svg';
+  static const String eyeIcon = 'assets/icons/home/eye_icon.svg';
 }

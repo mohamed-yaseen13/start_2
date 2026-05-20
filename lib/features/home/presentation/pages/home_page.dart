@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:start2/features/banners/presentation/widgets/banners_widget.dart';
+import 'package:start2/features/cars/presentation/widgets/home_cars_list_widget.dart';
 import 'package:start2/features/home/presentation/widgets/home_header_widget.dart';
 import 'package:start2/features/home/presentation/widgets/home_service_list_widget.dart';
 import 'package:start2/features/home/presentation/widgets/search_and_notification_row_widget.dart';
@@ -28,6 +29,9 @@ class HomePage extends StatelessWidget {
               BannersWidget(),
               SizedBox(height: 24.h),
               HomeOfficesListWidget(),
+              SizedBox(height: 24.h),
+              HomeCarsListWidget(),
+              SizedBox(height: 64.h), // to be changed
             ],
           ),
         ),

@@ -4,6 +4,7 @@ import 'package:start2/features/ads/presentation/providers/ads_provider.dart';
 import 'package:start2/features/auth/presentation/providers/profile/profile_provider.dart';
 import 'package:start2/features/auth/presentation/providers/otp/otp_provider.dart';
 import 'package:start2/features/banners/presentation/providers/banners_provider.dart';
+import 'package:start2/features/cars/presentation/providers/car_provider.dart';
 import 'package:start2/features/nav/presentation/providers/nav_bar_provider.dart';
 import 'package:start2/features/office/presentation/providers/office_provider.dart';
 import 'package:start2/injection_container.dart';
@@ -32,6 +33,7 @@ class AppProviders extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => AdsProvider()),
         ChangeNotifierProvider(create: (_) => BannersProvider()),
         ChangeNotifierProvider(create: (_) => OfficeProvider()),
+        ChangeNotifierProvider(create: (_) => CarProvider()),
       ],
       child: child,
     );
