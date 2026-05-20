@@ -41,4 +41,9 @@ class AppImages {
   static const String car = "assets/images/home/home_car_card.png";
 
   static const String banner = 'assets/images/home/banner.png';
+
+  static const String office1 = 'assets/images/home/office_1.png';
+  static const String office2 = 'assets/images/home/office_2.png';
+  static const String office3 = 'assets/images/home/office_3.png';
+  static const String office4 = 'assets/images/home/office_4.png';
 }

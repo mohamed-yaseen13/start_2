@@ -4,6 +4,7 @@ import 'package:start2/features/banners/presentation/widgets/banners_widget.dart
 import 'package:start2/features/home/presentation/widgets/home_header_widget.dart';
 import 'package:start2/features/home/presentation/widgets/home_service_list_widget.dart';
 import 'package:start2/features/home/presentation/widgets/search_and_notification_row_widget.dart';
+import 'package:start2/features/office/presentation/widgets/home_offices_list_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -26,6 +27,7 @@ class HomePage extends StatelessWidget {
               SizedBox(height: 24.h),
               BannersWidget(),
               SizedBox(height: 24.h),
+              HomeOfficesListWidget(),
             ],
           ),
         ),
