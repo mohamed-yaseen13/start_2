@@ -14,7 +14,7 @@ class SplashProvider extends ChangeNotifier {
       // Provider.of<SettingsProvider>(Constants.globalContext(), listen: false).getSettings(),
       // Provider.of<CategoriesProvider>(Constants.globalContext(), listen: false).refresh(),
       // Provider.of<CityProvider>(Constants.globalContext(), listen: false).getCities(),
-      Constants.globalContext().read<ProfileProvider>().getProfile()
+      Constants.globalContext().read<ProfileProvider>().getProfile(),
     ]);
     await delay(3000);
     // isEndAnimation= true;

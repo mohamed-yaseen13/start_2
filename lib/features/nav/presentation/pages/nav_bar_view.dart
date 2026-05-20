@@ -28,6 +28,7 @@ class NavBarView extends StatelessWidget {
           children: List.generate(items.length, (index) {
             final item = items[index];
             final isActive = navBarProvider.currentIndex == index;
+            if (index == 2) return SizedBox();
             return InkWell(
               onTap: () => navBarProvider.setIndex(index),
               highlightColor: Colors.transparent,

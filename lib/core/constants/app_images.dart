@@ -18,7 +18,7 @@ class AppImages {
 
   // NAV
   static const String navHomeIcon = 'assets/icons/nav/nav_home_icon.svg';
-  static const String navDiskIcon = 'assets/icons/nav/nav_disk_icon.svg';
+  static const String navOfficeIcon = 'assets/icons/nav/nav_office_icon.svg';
   static const String navMessageIcon = 'assets/icons/nav/nav_message_icon.svg';
   static const String navMoreIcon = 'assets/icons/nav/nav_more_icon.svg';
   static const String navFloatingActionButtonIcon =
@@ -28,4 +28,17 @@ class AppImages {
   static const String adsIcon = 'assets/icons/home/home_my_ads_icon.svg';
   static const String premiumAds =
       'assets/icons/home/home_premium_ads_icon.svg';
+  static const String searchIcon =
+      'assets/icons/home/home_search_bar_search_icon.svg';
+  static const String filterIcon =
+      'assets/icons/home/home_search_bar_filter_icon.svg';
+  static const String notificationIcon =
+      'assets/icons/home/home_notification_bell_icon.svg';
+  static const String redIcon =
+      'assets/icons/home/home_notification_red_icon.svg';
+
+  static const String estate = "assets/images/home/home_estate_card.png";
+  static const String car = "assets/images/home/home_car_card.png";
+
+  static const String banner = 'assets/images/home/banner.png';
 }

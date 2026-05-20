@@ -9,7 +9,7 @@ class FloatingActionButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 12.h),
+      padding: EdgeInsets.only(top: 12.h, right: 12.w),
       child: Container(
         width: 64.w,
         height: 64.h,
