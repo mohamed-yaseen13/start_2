@@ -18,6 +18,10 @@ class UserEntity {
   String? token;
   int unReadCount;
 
+  String get fullName {
+    return "${firstName ?? ""} ${lastName ?? ""}";
+  }
+
   UserEntity({
     required this.id,
     required this.firstName,

@@ -23,4 +23,9 @@ class AppImages {
   static const String navMoreIcon = 'assets/icons/nav/nav_more_icon.svg';
   static const String navFloatingActionButtonIcon =
       'assets/icons/nav/nav_floating_action_button_icon.svg';
+
+  // Home
+  static const String adsIcon = 'assets/icons/home/home_my_ads_icon.svg';
+  static const String premiumAds =
+      'assets/icons/home/home_premium_ads_icon.svg';
 }

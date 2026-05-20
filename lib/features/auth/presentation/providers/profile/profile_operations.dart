@@ -59,7 +59,7 @@ extension ProfileOperations on ProfileProvider {
   ImageProvider<Object> showUserImage() {
     if (image != null) {
       return FileImage(File(image!.path));
-    } else if (userEntity!.image != null) {
+    } else if (userEntity!.image != null && userEntity!.image!.isNotEmpty) {
       return CachedNetworkImageProvider(userEntity!.image!);
     } else {
       return AssetImage(AppImages.userImagePlaceHolder);
@@ -118,7 +118,7 @@ extension ProfileOperations on ProfileProvider {
     }
   }
 
-  void getProfile() async {
+  Future<void> getProfile() async {
     var response = await authUseCases.getProfile();
     response.fold(
       (l) {

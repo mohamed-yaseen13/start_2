@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:start2/features/ads/presentation/providers/ads_provider.dart';
 import 'package:start2/features/auth/presentation/providers/profile/profile_provider.dart';
 import 'package:start2/features/auth/presentation/providers/otp/otp_provider.dart';
 import 'package:start2/features/nav/presentation/providers/nav_bar_provider.dart';
@@ -26,6 +27,7 @@ class AppProviders extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => OtpProvider(sl.get())),
         ChangeNotifierProvider(create: (_) => ProfileProvider(sl.get())),
         ChangeNotifierProvider(create: (_) => NavBarProvider()),
+        ChangeNotifierProvider(create: (_) => AdsProvider()),
       ],
       child: child,
     );
