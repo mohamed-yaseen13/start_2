@@ -25,7 +25,11 @@ class CardDetailsWidget extends StatelessWidget {
                 Spacer(),
                 SvgPicture.asset(AppImages.shareIcon),
                 SizedBox(width: 2.w),
-                SvgPicture.asset(AppImages.heartIcon),
+                SvgPicture.asset(
+                  card.isFavorited
+                      ? AppImages.favoriteHeartIcon
+                      : AppImages.heartIcon,
+                ),
               ],
             ),
             Row(

@@ -68,18 +68,19 @@ class ButtonWidget extends StatelessWidget {
                 ? MainAxisAlignment.spaceBetween
                 : MainAxisAlignment.center,
             children: [
-              if (!widgetAfterText) widget ?? const SizedBox(),
+              if (widgetAfterText) widget ?? const SizedBox(),
+              if (widgetAfterText) SizedBox(width: 4.w),
               Text(
                 LanguageProvider.translate("buttons", text),
                 style:
                     textStyle ??
                     textTheme.bodyMedium?.copyWith(
                       color: colors.onPrimary,
-                      fontSize: 16.sp,
+                      fontSize: 18.sp,
                     ),
               ),
+              if (!widgetAfterText) widget ?? const SizedBox(),
               if (isSpaceBetween == true) const SizedBox(),
-              if (widgetAfterText) widget ?? const SizedBox(),
             ],
           ),
         ),

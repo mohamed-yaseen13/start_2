@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:start2/features/ads/presentation/providers/ads_provider.dart';
+import 'package:start2/features/area/presentation/providers/area_provider.dart';
 import 'package:start2/features/auth/presentation/providers/profile/profile_provider.dart';
 import 'package:start2/features/auth/presentation/providers/otp/otp_provider.dart';
 import 'package:start2/features/banners/presentation/providers/banners_provider.dart';
@@ -38,6 +39,8 @@ class AppProviders extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => CarProvider()),
         ChangeNotifierProvider(create: (_) => EstateProvider()),
         ChangeNotifierProvider(create: (_) => NeedProvider()),
+        ChangeNotifierProvider(create: (_) => SortProvider()),
+        ChangeNotifierProvider(create: (_) => AreaProvider()),
       ],
       child: child,
     );

@@ -62,4 +62,17 @@ class AppImages {
   static const String dollarIcon = 'assets/icons/home/dollar_icon.svg';
   static const String whatsappIcon = 'assets/icons/home/whatsapp_icon.svg';
   static const String phoneIcon = 'assets/icons/home/phone_icon.svg';
+
+  // Car
+  static const String carIcon = 'assets/icons/car/car_icon.svg';
+  static const String sortIcon = 'assets/icons/car/sort_icon.svg';
+  static const String shareCarIcon = 'assets/icons/car/share_icon.svg';
+  static const String officeIcon = 'assets/icons/car/office_icon.svg';
+  static const String serviceIcon = 'assets/icons/car/service_icon.svg';
+
+  static const String carCar1 = 'assets/images/car/car_1.png';
+  static const String carCar2 = 'assets/images/car/car_2.png';
+
+  static const String favoriteHeartIcon =
+      'assets/icons/car/favorite_heart_icon.svg';
 }

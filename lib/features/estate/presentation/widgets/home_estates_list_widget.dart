@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:start2/core/models/card_entity.dart';
 import 'package:start2/core/models/card_mapper.dart';
@@ -15,6 +16,16 @@ class HomeEstatesListWidget extends StatelessWidget {
       estateProvider.estates,
     );
 
-    return CardListWidget(text: 'estates', cards: cards);
+    return CardListWidget(
+      width: 180.w,
+      text: 'the_estates',
+      cards: cards,
+      onTap: () {
+        estateProvider.goTo();
+      },
+      onCardTap: () {
+        // estate details
+      },
+    );
   }
 }

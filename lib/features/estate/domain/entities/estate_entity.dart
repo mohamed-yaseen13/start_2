@@ -105,4 +105,6 @@ class EstateEntity implements Cardable {
   String get cardPrice => price!;
   @override
   String get cardViewCount => viewCount!.toString();
+  @override
+  bool get cardIsFavorited => isFavorited!;
 }

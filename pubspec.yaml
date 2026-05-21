@@ -108,10 +108,12 @@ flutter:
     - assets/images/home/
     - assets/images/splash/
     - assets/images/auth/
+    - assets/images/car/
 
     - assets/icons/auth/
     - assets/icons/home/
     - assets/icons/nav/
+    - assets/icons/car/
 
     - assets/lotties/
 

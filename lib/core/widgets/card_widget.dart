@@ -6,17 +6,22 @@ import 'package:start2/core/widgets/card_image_widget.dart';
 
 class CardWidget extends StatelessWidget {
   final CardEntity card;
+  final double? width;
+  final Function() onTap;
 
-  const CardWidget({super.key, required this.card});
+  const CardWidget({
+    super.key,
+    required this.card,
+    this.width,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        // car or estate details
-      },
+      onTap: onTap,
       child: Container(
-        width: 180.w,
+        width: width,
         height: 285.h,
         margin: EdgeInsets.only(bottom: 8.h, right: 4.w, left: 4.w),
         decoration: BoxDecoration(

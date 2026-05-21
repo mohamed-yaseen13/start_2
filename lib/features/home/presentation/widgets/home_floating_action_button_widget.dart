@@ -7,6 +7,7 @@ class HomeFloatingActionButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
+      heroTag: 'home_fab',
       onPressed: () {
         // add car or estate ad
       },

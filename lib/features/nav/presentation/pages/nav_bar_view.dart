@@ -6,7 +6,7 @@ import 'package:start2/core/Theme/app_theme.dart';
 import 'package:start2/features/language/presentation/provider/language_provider.dart';
 import 'package:start2/features/nav/domain/entities/nav_item_entity.dart';
 import 'package:start2/features/nav/presentation/providers/nav_bar_provider.dart';
-import 'package:start2/features/nav/presentation/widgets/floating_action_button_widget.dart';
+import 'package:start2/features/nav/presentation/widgets/nav_floating_action_button_widget.dart';
 
 class NavBarView extends StatelessWidget {
   const NavBarView({super.key});
@@ -18,7 +18,7 @@ class NavBarView extends StatelessWidget {
 
     return Scaffold(
       body: items[navBarProvider.currentIndex].page,
-      floatingActionButton: FloatingActionButtonWidget(),
+      floatingActionButton: NavFloatingActionButtonWidget(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: Container(
         height: 75.h,

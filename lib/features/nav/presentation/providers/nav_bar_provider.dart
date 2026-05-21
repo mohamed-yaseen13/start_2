@@ -11,7 +11,7 @@ class NavBarProvider extends ChangeNotifier {
   List<NavItemEntity> navItems = [
     NavItemEntity(title: "home", icon: AppImages.navHomeIcon, page: HomePage()),
     NavItemEntity(
-      title: "offices",
+      title: "the_offices",
       icon: AppImages.navOfficeIcon,
       page: Scaffold(),
     ),

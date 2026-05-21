@@ -50,3 +50,10 @@ class Seller {
 
   Seller({this.id, this.name});
 }
+
+class Filter {
+  int? id;
+  String? name;
+
+  Filter({this.id, this.name});
+}

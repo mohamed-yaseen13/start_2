@@ -6,6 +6,7 @@ class CardEntity {
   final String lastUpdate;
   final String price;
   final String viewCount;
+  final bool isFavorited;
 
   CardEntity({
     required this.image,
@@ -15,5 +16,6 @@ class CardEntity {
     required this.lastUpdate,
     required this.price,
     required this.viewCount,
+    required this.isFavorited,
   });
 }

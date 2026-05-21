@@ -5,13 +5,14 @@ import 'package:start2/core/models/card_entity.dart';
 
 class CardImageWidget extends StatelessWidget {
   final CardEntity card;
+  final double? width;
 
-  const CardImageWidget({super.key, required this.card});
+  const CardImageWidget({super.key, required this.card, this.width});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 180.w,
+      width: width,
       height: 180.h,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.only(

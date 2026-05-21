@@ -14,7 +14,7 @@ class HomeOfficesListWidget extends StatelessWidget {
 
     return Column(
       children: [
-        SeeAllWidget(text: 'offices', onTap: () {}),
+        SeeAllWidget(text: 'the_offices', onTap: () {}),
         SizedBox(height: 12.h),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

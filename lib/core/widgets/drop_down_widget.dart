@@ -48,12 +48,10 @@ class DropDownWidgetState extends State<DropDownWidget> {
             }
           },
           child: Container(
-            width: widget.width ?? 1.sw,
-            height: 52.h,
+            height: 35.h,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(widget.borderRadius ?? 12.r),
-              color: widget.color ?? colors.surface, // theme-aware background
-              border: Border.all(color: widget.borderColor ?? colors.secondary),
+              borderRadius: BorderRadius.circular(widget.borderRadius ?? 50.r),
+              color: colors.tertiary.withValues(alpha: 0.2),
             ),
             child: Padding(
               padding: EdgeInsets.symmetric(
@@ -66,22 +64,19 @@ class DropDownWidgetState extends State<DropDownWidget> {
                   widget.dropDownClass.displayedWidget() ?? const SizedBox(),
                   if (widget.dropDownClass.displayedWidget() != null)
                     SizedBox(width: .03.sw),
-                  Expanded(
-                    child: Text(
-                      widget.dropDownClass.displayedName(),
-                      maxLines: 1,
-                      style: textTheme.bodyMedium?.copyWith(
-                        color: colors.onSurface, // theme-aware text
-                      ),
+                  Text(
+                    widget.dropDownClass.displayedName(),
+                    maxLines: 1,
+                    style: textTheme.bodyMedium?.copyWith(
+                      color: colors.onSurface,
                     ),
                   ),
-                  const Spacer(),
+                  SizedBox(width: 8.w),
                   Icon(
                     Icons.keyboard_arrow_down_sharp,
-                    color: colors.primary,
-                    size: Constants.isTablet ? 60 : 30,
+                    color: colors.secondary,
+                    size: Constants.isTablet ? 60.sp : 16.sp,
                   ),
-                  const SizedBox(height: 10),
                 ],
               ),
             ),

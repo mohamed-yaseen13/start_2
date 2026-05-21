@@ -10,6 +10,7 @@ class CardMapper {
       lastUpdate: item.cardLastUpdate,
       price: item.cardPrice,
       viewCount: item.cardViewCount,
+      isFavorited: item.cardIsFavorited,
     );
   }
 
@@ -26,4 +27,5 @@ abstract class Cardable {
   String get cardLastUpdate;
   String get cardPrice;
   String get cardViewCount;
+  bool get cardIsFavorited;
 }
