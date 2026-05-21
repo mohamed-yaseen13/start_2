@@ -1,23 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:start2/features/cars/domain/entities/car_entity.dart';
-import 'package:start2/features/cars/presentation/widgets/home_car_details_widget.dart';
-import 'package:start2/features/cars/presentation/widgets/home_car_image_widget.dart';
+import 'package:start2/core/models/card_entity.dart';
+import 'package:start2/core/widgets/card_details_widget.dart';
+import 'package:start2/core/widgets/card_image_widget.dart';
 
-class HomeCarWidget extends StatelessWidget {
-  final CarEntity car;
+class CardWidget extends StatelessWidget {
+  final CardEntity card;
 
-  const HomeCarWidget({super.key, required this.car});
+  const CardWidget({super.key, required this.card});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // car details
+        // car or estate details
       },
       child: Container(
         width: 180.w,
         height: 285.h,
+        margin: EdgeInsets.only(bottom: 8.h, right: 4.w, left: 4.w),
         decoration: BoxDecoration(
           color: Colors.white,
           boxShadow: [
@@ -32,9 +33,9 @@ class HomeCarWidget extends StatelessWidget {
         ),
         child: Column(
           children: [
-            HomeCarImageWidget(car: car),
+            CardImageWidget(card: card),
             SizedBox(height: 8.h),
-            HomeCarDetailsWidget(car: car),
+            CardDetailsWidget(card: card),
           ],
         ),
       ),

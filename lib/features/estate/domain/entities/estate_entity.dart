@@ -2,30 +2,23 @@ import 'package:start2/core/models/app_entities.dart';
 import 'package:start2/core/models/card_mapper.dart';
 import 'package:start2/features/area/domain/entities/area_entity.dart';
 
-class CarEntity implements Cardable {
+class EstateEntity implements Cardable {
   int? id;
   int? userId;
   String? title;
-  int? brandModelId;
   String? type;
   String? video;
   String? cover;
-  int? carCategoryId;
-  int? countryId;
+  int? estateCategoryId;
   String? price;
-  bool? isNew;
-  String? gear;
-  String? year;
-  int? km;
-  String? color;
-  String? fuelType;
-  int? cc;
-  String? paint;
-  String? sellerType;
-  bool? haveRoof;
-  String? upholstery;
-  int? seatNumber;
-  String? carType;
+  String? address; // doesn't exist at the postman collection
+  AreaEntity? area;
+  int? floor;
+  int? estateSellerId;
+  int? roomNumbers;
+  String? furniture;
+  List<String>? direction;
+  String? estateType;
   int? areaId;
   double? lat;
   double? lng;
@@ -37,10 +30,9 @@ class CarEntity implements Cardable {
   String? rentType;
   int? viewCount;
   int? callCount;
-  int? whats; // i think it will be bool
-  int? phone; // i think it will be bool
-  int? message; // i think it will be bool
-  String? address;
+  int? whats;
+  int? phone;
+  int? message;
   String? createdAt;
   String? updatedAt;
   String? deletedAt;
@@ -48,38 +40,29 @@ class CarEntity implements Cardable {
   int? favoritesCount;
   bool? isFavorited;
   bool? isSpecial;
-  AreaEntity? area;
   Category? category;
   List<Feature>? features;
   List<Feature>? tags;
-  BrandModel? brandModel;
-  Country? country;
+  Seller? seller;
   List<String>? images;
 
-  CarEntity({
+  EstateEntity({
     this.id,
     this.userId,
     this.title,
-    this.brandModelId,
     this.type,
     this.video,
     this.cover,
-    this.carCategoryId,
-    this.countryId,
+    this.estateCategoryId,
     this.price,
-    this.isNew,
-    this.gear,
-    this.year,
-    this.km,
-    this.color,
-    this.fuelType,
-    this.cc,
-    this.paint,
-    this.sellerType,
-    this.haveRoof,
-    this.upholstery,
-    this.seatNumber,
-    this.carType,
+    this.address, // doesn't exist at the postman collection
+    this.area,
+    this.floor,
+    this.estateSellerId,
+    this.roomNumbers,
+    this.furniture,
+    this.direction,
+    this.estateType,
     this.areaId,
     this.lat,
     this.lng,
@@ -94,7 +77,6 @@ class CarEntity implements Cardable {
     this.whats,
     this.phone,
     this.message,
-    this.address,
     this.createdAt,
     this.updatedAt,
     this.deletedAt,
@@ -102,12 +84,10 @@ class CarEntity implements Cardable {
     this.favoritesCount,
     this.isFavorited,
     this.isSpecial,
-    this.area,
     this.category,
     this.features,
     this.tags,
-    this.brandModel,
-    this.country,
+    this.seller,
     this.images,
   });
 

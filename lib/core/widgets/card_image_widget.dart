@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:start2/core/Theme/app_theme.dart';
-import 'package:start2/features/cars/domain/entities/car_entity.dart';
+import 'package:start2/core/models/card_entity.dart';
 
-class HomeCarImageWidget extends StatelessWidget {
-  final CarEntity car;
+class CardImageWidget extends StatelessWidget {
+  final CardEntity card;
 
-  const HomeCarImageWidget({super.key, required this.car});
+  const CardImageWidget({super.key, required this.card});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class HomeCarImageWidget extends StatelessWidget {
           topRight: Radius.circular(20.r),
         ),
         image: DecorationImage(
-          image: AssetImage(car.images![0]),
+          image: AssetImage(card.image),
           fit: BoxFit.cover,
         ),
       ),
@@ -30,17 +30,19 @@ class HomeCarImageWidget extends StatelessWidget {
             children: [
               Spacer(),
               Container(
-                width: 42.w,
+                width: card.type == "مميز" ? 82.w : 42.w,
                 height: 22.h,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(8.r),
                     bottomRight: Radius.circular(8.r),
                   ),
-                  color: context.colors.primary,
+                  color: card.type == "مميز"
+                      ? Color(0xFFFFAA00)
+                      : context.colors.primary,
                 ),
                 child: Center(
-                  child: Text(car.type!, style: context.text.bodyMedium),
+                  child: Text(card.type, style: context.text.bodyMedium),
                 ),
               ),
             ],

@@ -55,4 +55,11 @@ class AppImages {
   static const String locationIcon = 'assets/icons/home/location_icon.svg';
   static const String timerIcon = 'assets/icons/home/timer_icon.svg';
   static const String eyeIcon = 'assets/icons/home/eye_icon.svg';
+
+  static const String estate1 = 'assets/images/home/estate_1.png';
+  static const String estate2 = 'assets/images/home/estate_2.png';
+
+  static const String dollarIcon = 'assets/icons/home/dollar_icon.svg';
+  static const String whatsappIcon = 'assets/icons/home/whatsapp_icon.svg';
+  static const String phoneIcon = 'assets/icons/home/phone_icon.svg';
 }
