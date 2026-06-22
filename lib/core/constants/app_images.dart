@@ -75,4 +75,16 @@ class AppImages {
 
   static const String favoriteHeartIcon =
       'assets/icons/car/favorite_heart_icon.svg';
+
+  static const String carLocationIcon =
+      'assets/icons/car/car_location_icon.svg';
+
+  static const String carAdNumberIcon =
+      'assets/icons/car/car_ad_number_icon.svg';
+
+  static const String carDateIcon = 'assets/icons/car/car_date_icon.svg';
+  static const String carCarIcon = 'assets/icons/car/car_car_icon.svg';
+  static const String carCountryIcon = 'assets/icons/car/car_country_icon.svg';
+  static const String carBrandIcon = 'assets/icons/car/car_brand_icon.svg';
+  static const String carClassIcon = 'assets/icons/car/car_class_icon.svg';
 }
