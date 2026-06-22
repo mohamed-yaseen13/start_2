@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 import 'package:start2/core/constants/app_images.dart';
+import 'package:start2/core/providers/sort_provider.dart';
 import 'package:start2/core/widgets/drop_down_widget.dart';
 import 'package:start2/features/area/presentation/providers/area_provider.dart';
 import 'package:start2/features/cars/presentation/providers/car_provider.dart';

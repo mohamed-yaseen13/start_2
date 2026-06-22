@@ -28,8 +28,8 @@ class SplashProvider extends ChangeNotifier {
     //   }
     // }
 
-    String? login = sharedPreferences.getString('token');
-    if (login != null) {
+    String? token = sharedPreferences.getString('token');
+    if (token != null && token.isNotEmpty) {
       Constants.globalContext().read<NavBarProvider>().goTo();
     } else {
       Constants.globalContext().read<LoginProvider>().goTo();

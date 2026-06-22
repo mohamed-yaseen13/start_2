@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:start2/core/providers/sort_provider.dart';
 import 'package:start2/features/ads/presentation/providers/ads_provider.dart';
 import 'package:start2/features/area/presentation/providers/area_provider.dart';
 import 'package:start2/features/auth/presentation/providers/profile/profile_provider.dart';

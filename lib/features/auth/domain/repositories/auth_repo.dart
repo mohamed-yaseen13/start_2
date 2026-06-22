@@ -9,4 +9,5 @@ abstract class AuthRepo {
     Map<String, dynamic> data,
   );
   Future<Either<DioException, UserEntity>> getProfile();
+  Future<Either<DioException, String>> refreshToekn(Map<String, dynamic> data);
 }

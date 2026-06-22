@@ -32,4 +32,9 @@ class AuthRepoImp implements AuthRepo {
   Future<Either<DioException, UserEntity>> getProfile() {
     return authRemoteDataSource.getProfile();
   }
+
+  @override
+  Future<Either<DioException, String>> refreshToekn(Map<String, dynamic> data) {
+    return authRemoteDataSource.refreshToken(data);
+  }
 }

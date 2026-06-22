@@ -13,7 +13,7 @@ class AuthRemoteDataSource {
     Map<String, dynamic> data,
   ) async {
     var response = await apiHandel.post('user/send_otp_code', data);
-    log(response.toString());
+    log('send code api: ${response.toString()}');
     return response.fold((l) => Left(l), (r) => Right(r.data['data']));
   }
 
@@ -21,7 +21,7 @@ class AuthRemoteDataSource {
     Map<String, dynamic> data,
   ) async {
     var response = await apiHandel.post('user/check_code', data);
-    log(response.toString());
+    log('check code api: ${response.toString()}');
     return response.fold((l) => Left(l), (r) {
       return Right(UserModel.fromJson(r.data['data']));
     });
@@ -31,7 +31,7 @@ class AuthRemoteDataSource {
     Map<String, dynamic> data,
   ) async {
     var response = await apiHandel.post('user/update_profile', data);
-    log(response.toString());
+    log('update profile api: ${response.toString()}');
     return response.fold((l) => Left(l), (r) {
       return Right(UserModel.fromJson(r.data['data']));
     });
@@ -39,9 +39,17 @@ class AuthRemoteDataSource {
 
   Future<Either<DioException, UserModel>> getProfile() async {
     var response = await apiHandel.get('user/get_profile');
-    log(response.toString());
+    log('get Profile api: ${response.toString()}');
     return response.fold((l) => Left(l), (r) {
       return Right(UserModel.fromJson(r.data['data']));
     });
+  }
+
+  Future<Either<DioException, String>> refreshToken(
+    Map<String, dynamic> data,
+  ) async {
+    var response = await apiHandel.post('user/refresh_token', data);
+    log('refresh token api: ${response.toString()}');
+    return response.fold((l) => Left(l), (r) => Right(r.data['token']));
   }
 }

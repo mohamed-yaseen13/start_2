@@ -29,4 +29,10 @@ class AuthUseCases {
   Future<Either<DioException, UserEntity>> getProfile() async {
     return authRepo.getProfile();
   }
+
+  Future<Either<DioException, String>> refreshToken(
+    Map<String, dynamic> data,
+  ) async {
+    return authRepo.refreshToekn(data);
+  }
 }

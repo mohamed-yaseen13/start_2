@@ -6,9 +6,9 @@ import 'package:start2/core/widgets/all_data_header_widget.dart';
 import 'package:start2/core/widgets/button_widget.dart';
 import 'package:start2/core/widgets/custom_bottom_nav_bar_widget.dart';
 import 'package:start2/features/cars/presentation/providers/car_provider.dart';
-import 'package:start2/features/cars/presentation/widgets/car_cars_list_widget.dart';
-import 'package:start2/features/cars/presentation/widgets/car_drop_down_list_widget.dart';
-import 'package:start2/features/cars/presentation/widgets/car_filter_tabs_list_widget.dart';
+import 'package:start2/features/cars/presentation/widgets/all_cars/car_cars_list_widget.dart';
+import 'package:start2/features/cars/presentation/widgets/all_cars/car_drop_down_list_widget.dart';
+import 'package:start2/features/cars/presentation/widgets/all_cars/car_filter_tabs_list_widget.dart';
 import 'package:start2/features/language/presentation/provider/language_provider.dart';
 
 class AllCarsPage extends StatelessWidget {

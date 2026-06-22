@@ -14,7 +14,8 @@
     "all_areas": "كل المدن",
     "sub_category": "القسم الفرعي",
     "offices": "مكاتب",
-    "services": "خدمات"
+    "services": "خدمات",
+    "car_details": "تفاصيل السيارة"
   },
   "auth": {
     "hi": "مرحبا بعودتك",
@@ -51,7 +52,7 @@
   },
   "navbar": {
     "home": "الرئيسية",
-    "offices": "المكاتب",
+    "the_offices": "المكاتب",
     "message": "الرسائل",
     "more": "المزيد"
   },

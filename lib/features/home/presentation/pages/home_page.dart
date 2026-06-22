@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:start2/features/banners/presentation/widgets/banners_widget.dart';
-import 'package:start2/features/cars/presentation/widgets/home_cars_list_widget.dart';
+import 'package:start2/features/cars/presentation/widgets/home/home_cars_list_widget.dart';
 import 'package:start2/features/estate/presentation/widgets/home_estates_list_widget.dart';
 import 'package:start2/features/home/presentation/widgets/home_floating_action_button_widget.dart';
 import 'package:start2/features/home/presentation/widgets/home_header_widget.dart';

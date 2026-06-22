@@ -43,7 +43,12 @@ class CardImageWidget extends StatelessWidget {
                       : context.colors.primary,
                 ),
                 child: Center(
-                  child: Text(card.type, style: context.text.bodyMedium),
+                  child: Text(
+                    card.type,
+                    style: context.text.bodyMedium!.copyWith(
+                      color: Colors.white,
+                    ),
+                  ),
                 ),
               ),
             ],

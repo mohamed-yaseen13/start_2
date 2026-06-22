@@ -27,10 +27,9 @@ class NavBarProvider extends ChangeNotifier {
   void setIndex(int index) {
     if (currentIndex == index) {
       return;
-    } else {
-      currentIndex = index;
-      notifyListeners();
     }
+    currentIndex = index;
+    notifyListeners();
   }
 
   void goTo() {

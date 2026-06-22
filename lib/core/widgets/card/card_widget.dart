@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:start2/core/models/card_entity.dart';
-import 'package:start2/core/widgets/card_details_widget.dart';
-import 'package:start2/core/widgets/card_image_widget.dart';
+import 'package:start2/core/widgets/card/card_details_widget.dart';
+import 'package:start2/core/widgets/card/card_image_widget.dart';
 
 class CardWidget extends StatelessWidget {
   final CardEntity card;

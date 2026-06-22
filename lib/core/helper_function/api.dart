@@ -4,6 +4,8 @@ import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:jwt_decode/jwt_decode.dart';
 import 'package:provider/provider.dart';
+import 'package:start2/features/auth/presentation/providers/profile/profile_operations.dart';
+import 'package:start2/features/auth/presentation/providers/profile/profile_provider.dart';
 import '../../features/language/presentation/provider/language_provider.dart';
 import '../constants/constants.dart';
 import '../models/progress_provider.dart';
@@ -79,6 +81,8 @@ class ApiHandel {
     dynamic path, [
     Map<String, dynamic>? data,
   ]) async {
+    log(path);
+    log(data.toString());
     try {
       await reLogin(path);
       cancelToken = CancelToken();
@@ -212,10 +216,7 @@ class ApiHandel {
         token != null &&
         token.isNotEmpty &&
         Jwt.isExpired(token)) {
-      // await Provider.of<ProfileProvider>(
-      //   Constants.globalContext(),
-      //   listen: false,
-      // ).refreshToken();
+      await Constants.globalContext().read<ProfileProvider>().refreshToken();
     }
   }
 }

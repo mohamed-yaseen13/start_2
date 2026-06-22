@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -127,6 +126,22 @@ extension ProfileOperations on ProfileProvider {
       (r) {
         userEntity = r;
         rebuild();
+      },
+    );
+  }
+
+  Future<void> refreshToken() async {
+    String? token = sharedPreferences.getString('token');
+    Map<String, dynamic> data = {};
+    data['token'] = token;
+    var response = await authUseCases.refreshToken(data);
+    response.fold(
+      (l) {
+        showToast(l.message ?? "");
+      },
+      (r) {
+        ApiHandel.getInstance.updateHeader(r);
+        sharedPreferences.setString('token', r);
       },
     );
   }
