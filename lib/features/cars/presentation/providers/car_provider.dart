@@ -110,48 +110,4 @@ class CarProvider extends ChangeNotifier with CarFilterMixin, CarDropdownMixin {
     currentImage = index;
     notifyListeners();
   }
-
-  List<CarDetailsEntity> adDetails = [
-    CarDetailsEntity(
-      icon: AppImages.carAdNumberIcon,
-      desc: '5656768',
-      title: 'ad_number',
-    ),
-    CarDetailsEntity(
-      icon: AppImages.carDateIcon,
-      desc: '2026-10-1 12:00م',
-      title: 'date',
-    ),
-  ];
-
-  List<CarDetailsEntity> carDetails = [
-    CarDetailsEntity(
-      icon: AppImages.carCarIcon,
-      desc: 'مستعمله',
-      title: 'car_type',
-    ),
-    CarDetailsEntity(
-      icon: AppImages.carCountryIcon,
-      desc: 'الصين',
-      title: 'car_country',
-    ),
-    CarDetailsEntity(
-      icon: AppImages.carBrandIcon,
-      desc: 'مرسيدس',
-      title: 'car_brand',
-    ),
-    CarDetailsEntity(
-      icon: AppImages.carClassIcon,
-      desc: '210',
-      title: 'car_class',
-    ),
-  ];
-}
-
-class CarDetailsEntity {
-  final String? title;
-  final String desc;
-  final String icon;
-
-  CarDetailsEntity({required this.icon, required this.desc, this.title});
 }

@@ -1,3 +1,4 @@
+import 'package:start2/core/constants/app_images.dart';
 import 'package:start2/core/models/app_entities.dart';
 import 'package:start2/core/models/card_mapper.dart';
 import 'package:start2/features/area/domain/entities/area_entity.dart';
@@ -127,4 +128,48 @@ class CarEntity implements Cardable {
   String get cardViewCount => viewCount!.toString();
   @override
   bool get cardIsFavorited => isFavorited!;
+
+  List<CarDetailsEntity> carDetails = [
+    CarDetailsEntity(
+      icon: AppImages.carCarIcon,
+      desc: 'مستعمله', // to be updated
+      title: 'car_type',
+    ),
+    CarDetailsEntity(
+      icon: AppImages.carCountryIcon,
+      desc: 'الصين', // to be updated
+      title: 'car_country',
+    ),
+    CarDetailsEntity(
+      icon: AppImages.carBrandIcon,
+      desc: 'مرسيدس', // to be updated
+      title: 'car_brand',
+    ),
+    CarDetailsEntity(
+      icon: AppImages.carClassIcon,
+      desc: '210', // to be updated
+      title: 'car_class',
+    ),
+  ];
+
+  List<CarDetailsEntity> adDetails = [
+    CarDetailsEntity(
+      icon: AppImages.carAdNumberIcon,
+      desc: '5656768', // to be updated
+      title: 'ad_number',
+    ),
+    CarDetailsEntity(
+      icon: AppImages.carDateIcon,
+      desc: '2026-10-1 12:00م',
+      title: 'date', // to be updated
+    ),
+  ];
+}
+
+class CarDetailsEntity {
+  final String? title;
+  final String desc;
+  final String icon;
+
+  CarDetailsEntity({required this.icon, required this.desc, this.title});
 }

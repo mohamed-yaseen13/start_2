@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:provider/provider.dart';
 import 'package:start2/features/cars/domain/entities/car_entity.dart';
-import 'package:start2/features/cars/presentation/providers/car_provider.dart';
 import 'package:start2/features/cars/presentation/widgets/car/car_app_bar.dart';
 import 'package:start2/features/cars/presentation/widgets/car/car_desc_widget.dart';
 import 'package:start2/features/cars/presentation/widgets/car/car_details_container_widget.dart';
@@ -17,8 +15,6 @@ class CarPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final carProvider = context.watch<CarProvider>();
-
     return Scaffold(
       appBar: CarAppBar(isFavorited: car.isFavorited!),
       body: SingleChildScrollView(
@@ -39,16 +35,14 @@ class CarPage extends StatelessWidget {
               SizedBox(height: 24.h),
               CarDescWidget(title: car.cardTitle, desc: car.description!),
               SizedBox(height: 24.h),
-
-              // any car will have same data so i must change this soon
               CarDetailsContainerWidget(
                 title: 'ad_details',
-                entities: carProvider.adDetails,
+                entities: car.adDetails,
               ),
               SizedBox(height: 24.h),
               CarDetailsContainerWidget(
                 title: 'car_details',
-                entities: carProvider.carDetails,
+                entities: car.carDetails,
               ),
 
               //
